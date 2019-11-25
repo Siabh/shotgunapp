@@ -1,0 +1,81 @@
+<div>
+  <h1>Création d'un shotgun</h1>
+  <form
+    class="form-container"
+    [formGroup]="shotgunForm"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        required
+        placeholder="Nom du shotgun"
+        formControlName="name"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        required
+        placeholder="Date du shotgun"
+        [matDatepicker]="shotgunDatepicker"
+        [matDatepickerFilter]="dateFilter"
+        formControlName="shotgunDate"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="shotgunDatepicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #shotgunDatepicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        required
+        [matAutocomplete]="autoPc"
+        placeholder="Lieu du shotgun"
+        formControlName="shotgunPlace"
+      />
+    </mat-form-field>
+    <mat-autocomplete
+      #autoPc="matAutocomplete"
+      [displayWith]="getShotgunPlaceName.bind(this)"
+    >
+      <mat-option *ngFor="let pc of partiesCommunesList" [value]="pc.id"
+        >{{ pc.name }} ({{ pc.localisation.name }})</mat-option
+      >
+    </mat-autocomplete>
+    <mat-form-field>
+      <input
+        matInput
+        required
+        [matAutocomplete]="autoFamille"
+        placeholder="Famille"
+        formControlName="shotgunFamille"
+      />
+    </mat-form-field>
+    <mat-autocomplete
+      #autoFamille="matAutocomplete"
+      required
+      placeholder="Famille"
+      [displayWith]="getFamilleName.bind(this)"
+    >
+      <mat-option
+        *ngFor="let famille of famillesList"
+        [value]="famille.id"
+        >{{ famille.nomFamille }}</mat-option
+      >
+    </mat-autocomplete>
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Commentaires"
+        formControlName="shotgunComments"
+      ></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button [disabled]="!shotgunForm.valid" color="primary" type="submit" (click)="createShotgun(shotgunForm.value)">Shotgun!</button>
+    <button mat-raised-button color="warn" type="button" (click)="dialogRef.close()">
+      Finalement non :(
+    </button>
+  </form>
+</div>

@@ -1,0 +1,37 @@
+INSERT INTO Famille (id, nomfamille) VALUES (1, 'Paillette');
+INSERT INTO Famille (id, nomfamille) VALUES (2, 'Daleux');
+INSERT INTO Famille (id, nomfamille) VALUES (3, 'Richter');
+INSERT INTO Famille (id, nomfamille) VALUES (4, 'Cheval Cheval');
+INSERT INTO Famille (id, nomfamille) VALUES (5, 'Shark');
+
+INSERT INTO Residence (id, name) VALUES (1, 'Jarlard 1');
+INSERT INTO Residence (id, name) VALUES (2, 'Jarlard 2');
+INSERT INTO Residence (id, name) VALUES (3, 'Jarlard 3');
+INSERT INTO Residence (id, name) VALUES (4, 'Jarlard 4');
+INSERT INTO Residence (id, name) VALUES (5, 'Jarlard 5');
+INSERT INTO Residence (id, name) VALUES (6, 'Gambetta 1');
+INSERT INTO Residence (id, name) VALUES (7, 'Gambetta 2');
+INSERT INTO Residence (id, name) VALUES (8, 'Temporalité');
+INSERT INTO Residence (id, name) VALUES (9, 'Halfon');
+INSERT INTO Residence (id, name) VALUES (10, 'Montaigne');
+
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (1, 'V du 10', 1);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (2, 'V du 11', 1);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (3, 'V du 12', 1);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (4, 'V du 13', 1);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (5, 'V du 20', 2);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (6, 'V du 21', 2);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (7, 'V du 22', 2);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (8, 'V du 23', 2);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (9, 'V du 30', 3);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (10, 'V du 31', 3);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (11, 'V du 32', 3);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (12, 'V du 33', 3);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (13, 'V du 40', 4);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (14, 'V du 41', 4);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (15, 'V du 42', 4);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (16, 'V du 43', 4);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (17, '1e étage', 5);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (18, '2e étage', 5);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (19, '3e étage', 5);
+INSERT INTO PartieCommune(id, name, localisation_id) VALUES (20, '4e étage', 5);

@@ -1,0 +1,7 @@
+<span *ngFor="let famille of famillesShotguns">
+  <h2>Shotguns pour la famille {{ famille.nomFamille }}</h2>
+  <p *ngIf="!famille.listeShotguns || famille.listeShotguns.length === 0">Ils n'en ont pas :(</p>
+  <span *ngIf="famille.listeShotguns && famille.listeShotguns.length > 0">
+    <app-shotguns [listeShotguns]="famille.listeShotguns"></app-shotguns>
+  </span>
+</span>
