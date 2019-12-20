@@ -39,6 +39,7 @@ export class ShotgunsComponent implements OnInit {
 
     if (this.listeShotguns) {
       this.dataSource = new MatTableDataSource(this.listeShotguns);
+      console.log(this.listeShotguns)
     }
 
     this.dataSource.sort = this.sort;

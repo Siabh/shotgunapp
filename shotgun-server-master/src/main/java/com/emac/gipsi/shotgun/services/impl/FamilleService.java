@@ -24,7 +24,7 @@ public class FamilleService implements IFamilleService {
 
 	@Autowired
 	private final FamilleRepository familleRepository;
-
+	
 	private final ModelMapper modelMapper = new ModelMapper();
 
 	public FamilleService(FamilleRepository familleRepository) {

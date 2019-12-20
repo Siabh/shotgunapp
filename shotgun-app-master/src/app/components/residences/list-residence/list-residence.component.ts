@@ -8,22 +8,27 @@ import { ShotgunService } from 'src/app/services/shotgun/shotgun.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-list-residences",
-  templateUrl: "./list-residences.component.html",
-  styleUrls: ["./list-residences.component.css"]
+  selector: "app-list-residence",
+  templateUrl: "./list-residence.component.html",
+  styleUrls: ["./list-residence.component.css"]
 })
 
-export class ListResidencesComponent implements OnInit {
+export class ListResidenceComponent implements OnInit {
   public residencesShotguns: Array<Residence>;
   public partieCommuneShotgun: Array<PartieCommune>;
   public shotguns: Array<Shotgun>;
+  public id: number;
   constructor(private residencesService: ResidencesService,
     private partieCommuneService: PartieCommunesService,
     private shotgunService: ShotgunService,
     private router: Router) {
+    this.id = parseInt(this.router.url.replace("/residences/",''));
+    console.log(this.id);
     this.residencesService.residencesList.subscribe(
       (values: Array<Residence>) => {
-        this.residencesShotguns = values;
+        this.residencesShotguns=values.filter( (res)=>{
+            return res.id==this.id
+        });
       }
     );
     this.partieCommuneService.partiesCommunes.subscribe(
@@ -39,8 +44,7 @@ export class ListResidencesComponent implements OnInit {
   }
   
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getShotgunForPc(pc:PartieCommune){
     var result:Array<Shotgun>=[];

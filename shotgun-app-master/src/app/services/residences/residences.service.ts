@@ -18,11 +18,12 @@ export class ResidencesService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getResidences() {
+  public getResidences():void {
     this.httpClient
-      .get<Array<Residence>>(ResidenceRoutes.GET_RESIDENCES())
+      .get(ResidenceRoutes.GET_RESIDENCES())
       .subscribe((values: Array<Residence>) => {
         this._ResidencesList.next(values);
+        console.log(values)
       });
   }
 

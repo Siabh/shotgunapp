@@ -1,4 +1,4 @@
-<div>
+<div (click)="applyfilters()">
   <h1>Création d'un shotgun</h1>
   <form
     class="form-container"
@@ -12,14 +12,14 @@
         formControlName="name"
       />
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field >
       <input
         matInput
         required
         placeholder="Date du shotgun"
         [matDatepicker]="shotgunDatepicker"
         [matDatepickerFilter]="dateFilter"
-        formControlName="shotgunDate"
+        formControlName="shotgunDate" 
       />
       <mat-datepicker-toggle
         matSuffix
@@ -40,7 +40,7 @@
       #autoPc="matAutocomplete"
       [displayWith]="getShotgunPlaceName.bind(this)"
     >
-      <mat-option *ngFor="let pc of partiesCommunesList" [value]="pc.id"
+      <mat-option *ngFor="let pc of partiesCommunesListFiltered" [value]="pc.id"
         >{{ pc.name }} ({{ pc.localisation.name }})</mat-option
       >
     </mat-autocomplete>
@@ -60,7 +60,7 @@
       [displayWith]="getFamilleName.bind(this)"
     >
       <mat-option
-        *ngFor="let famille of famillesList"
+        *ngFor="let famille of famillesListFiltered"
         [value]="famille.id"
         >{{ famille.nomFamille }}</mat-option
       >

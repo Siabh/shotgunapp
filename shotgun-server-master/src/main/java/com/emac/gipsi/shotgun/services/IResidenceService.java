@@ -6,4 +6,6 @@ import com.emac.gipsi.shotgun.model.Residence;
 
 public interface IResidenceService {
 	public List<Residence> getResidences();
+
+	public List<Residence> getResidencesShotgun();
 }

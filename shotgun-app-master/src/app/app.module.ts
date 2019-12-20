@@ -19,6 +19,8 @@ import { ErrorInterceptor } from "./core/interceptor/http.interceptor";
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from "@angular/material";
 import { ListResidencesComponent } from "./components/residences/list-residences/list-residences.component";
 import { ResidencesService } from "./services/residences/residences.service";
+import { ListResidenceComponent } from './components/residences/list-residence/list-residence.component';
+import { ListFamilleComponent } from './components/familles/list-famille/list-famille.component';
 
 registerLocaleData(localeFr, "fr");
 
@@ -29,7 +31,9 @@ registerLocaleData(localeFr, "fr");
     CreateShotgunComponent,
     CreateShotgunDialogComponent,
     ListFamillesComponent,
-    ListResidencesComponent
+    ListResidencesComponent,
+    ListResidenceComponent,
+    ListFamilleComponent
   ],
   imports: [
     BrowserModule,

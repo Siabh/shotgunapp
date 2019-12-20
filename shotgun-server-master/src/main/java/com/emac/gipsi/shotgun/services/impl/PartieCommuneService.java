@@ -9,11 +9,15 @@ import javax.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import com.emac.gipsi.shotgun.dto.PartieCommuneDto;
 import com.emac.gipsi.shotgun.dto.PartieCommuneShotgunDto;
+import com.emac.gipsi.shotgun.dto.ShotgunDto;
+import com.emac.gipsi.shotgun.model.PartieCommune;
 import com.emac.gipsi.shotgun.repositories.PartieCommuneRepository;
+import com.emac.gipsi.shotgun.repositories.ShotgunRepository;
 import com.emac.gipsi.shotgun.services.IPartieCommuneService;
 
 @Service("partieCommuneService")
@@ -23,6 +27,9 @@ public class PartieCommuneService implements IPartieCommuneService {
 	private final PartieCommuneRepository partieCommuneRepository;
 
 	private final ModelMapper modelMapper = new ModelMapper();
+	
+	@Autowired
+	private ShotgunRepository shotgunRepository;
 
 	public PartieCommuneService(PartieCommuneRepository partieCommuneRepository) {
 		this.partieCommuneRepository = partieCommuneRepository;
